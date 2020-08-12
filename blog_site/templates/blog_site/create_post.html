@@ -1,0 +1,91 @@
+{% extends 'blog_site/base.html' %}
+{% load static %}
+{% include 'blog_site/inc/_nav.html' %}
+{% block content %}
+<div class="add_post">
+    <h3 class="add_post_title">Добавить статью</h3>
+    <form action="{% url 'create_post' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    {{ form.title }}
+                    {{ form.title.errors }}
+                </td>
+                <td>
+                    <button class="button_submit" type="submit">Опубликовать</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form.description }}
+                    {{ form.description.errors }}
+                </td>
+                <td class="upload_cell">
+                    <form class="upload_file" action="#" >
+                        <h5 class="upload_file_h5">Загрузить изображение</h5>
+
+                        <div id="preview">
+
+                        </div>
+
+                        <div class="upload_button">
+                            {% comment %}
+                            <input id="fileupload" type="file" name="files[]" style='display: none;'>
+                            {% endcomment %}
+                            {{ form.image }}
+                            <button class="button_file">Файл</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('.button_file').on('click', function() { $('#fileupload').click();return false;});
+</script>
+<script>
+function handleRemove(evt){
+prev = document.getElementById('preview');
+prev.hidden=true;
+thumb_node = document.getElementsByClassName('thumb');
+thumb_node[0].parentNode.remove()
+button = document.getElementsByClassName("button_file");
+button[0].hidden=false;
+document.getElementById('fileupload').addEventListener('change', handleFileSelect, false);
+}
+function handleFileSelect(evt) {
+    prev = document.getElementById('preview');
+    prev.hidden = false;
+    var file = evt.target.files;
+    var f = file[0];
+    if (!f.type.match('image.*')) {
+        alert("Только изображения..");
+    }
+    else
+    {
+    var reader = new FileReader();
+    reader.onload = (function(theFile) {
+        return function(e) {
+            var span = document.createElement('span');
+            var span2 = document.createElement('span');
+            span2.innerHTML = ['<a onclick="handleRemove()"><img id="krestik" src="{% static 'images/krest.png' %}" /></a>'].join('');
+            span.innerHTML = ['<img class="thumb" width="260" height="260" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+            document.getElementById('preview').insertBefore(span, null);
+            document.getElementById('preview').insertBefore(span2, null);
+        };
+    })(f);
+    reader.readAsDataURL(f);
+    button = document.getElementsByClassName("button_file");
+    button[0].hidden=true;
+    }
+}
+
+document.getElementById('fileupload').addEventListener('change', handleFileSelect, false);
+krest = document.getElementById('krestik');
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'blog_site/base.html' %}
+{% load static %}
+{% include 'blog_site/inc/_nav.html' %}
+{% block content %}
+<div class="body">
+    <div class="new_post">
+        <span id="new">NEW</span>
+        <h3>{{ first_post.title|capfirst }}</h3>
+        <p class="description">{{ first_post.description|capfirst|truncatewords:25 }}</p>
+        <form action="{% url 'read_post' first_post.pk %}">
+        <button class="button_read">Читать</button>
+            </form>
+    </div>
+    <div class="article_div">
+        {% if first_post.image %}
+        <img class="article_image" src="{{ first_post.image.url }}" alt="">
+        {% else %}
+        <img  src="{% static 'images/no_image.png' %}" alt="" width="422">
+        {% endif %}
+        </div>
+
+</div>
+
+<div class="footer">
+    <h4 class="other_articles_header">Другие статьи</h4>
+    {% for post in posts %}
+    {% if forloop.counter > 1 %}
+    <a class="post_cell" href="{% url 'read_post' post.pk %}">
+        <span class="post_data">{{ post.created_at|date:"d M Y H:i" }}</span>
+        {% if post.image %}
+        <img class="post_image" src="{{ post.image.url }}" alt="" align="center">
+        {% else %}
+        <img class="post_image" src="{% static 'images/1Statya_2.png' %}" alt="">
+        {% endif %}
+        <h5>{{ post.title|capfirst }}</h5>
+    </a>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

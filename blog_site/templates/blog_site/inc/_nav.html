@@ -1,0 +1,11 @@
+{% load static %}
+<div class="header">
+    <a href="{% url 'main_page' %}" style="text-decoration:none;">
+        <img id="logo" src="{% static 'images/Logo_Kodland.png' %}">
+    </a>
+    <span id="site_name">Блог</span>
+
+    <form action="{% url 'create_post' %}" style="display: inline;">
+        <button class="button">+ Добавить статью</button>
+    </form>
+</div>

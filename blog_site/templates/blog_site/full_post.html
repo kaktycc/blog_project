@@ -1,0 +1,18 @@
+{% extends 'blog_site/base.html' %}
+{% load static %}
+{% include 'blog_site/inc/_nav.html' %}
+{% block content %}
+<body style="background: #E5E5E5;">
+<div class="content_full_post">
+    <h4 style="text-align:center">{{ post.title|capfirst }}</h4>
+    {% if post.image %}
+        <img class="post_image_full" src="{{ post.image.url }}" alt="" align="center">
+        {% else %}
+        <img class="post_image_full" src="{% static 'images/1Statya_2.png' %}" alt="">
+        {% endif %}
+    <p class="full_post_description">
+    {{ post.description }}
+    </p>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,336 @@
+{% load static %}
+
+@font-face {
+  font-family: 'Circe Rounded';
+  src: local('Abc'),
+  url('../fonts/CirceRounded-AltBold.ttf') format("truetype");
+}
+@font-face {
+  font-family: 'Museo Cyrl';
+  src: local('Museo Cyrl'),
+  url('../fonts/Museo Cyrl.otf') format("truetype");
+}
+h1 {
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 72px;
+line-height: 86px;
+color: #010101;
+}
+h3 {
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 44px;
+line-height: 58px;
+color: #315AF2;
+margin:auto;
+}
+h4 {
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+letter-spacing: -0.416667px;
+
+color: #315AF2;
+}
+h5 {
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 120%;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.416667px;
+color: #315AF2;
+}
+
+.description {
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+}
+
+.header {
+    height: 80px;
+    border-bottom: 2px solid #CDCDCD;
+    background: #FFFFFF;
+}
+
+.body {
+    height: 440px;
+    border-bottom: 2px solid #CDCDCD;
+}
+
+#logo {
+padding-left:120px;
+padding-top: 24px;
+}
+
+#site_name {
+margin-left:20px;
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 28px;
+}
+
+.button {
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+background: #315AF2;
+border-radius: 6px;
+font-size: 16px;
+line-height: 19px;
+padding: 6px 16px;
+color: #FFFFFF;
+float:right;
+margin-right:120px;
+margin-top: 24px;
+}
+
+.new_post {
+padding-left:120px;
+padding-top: 40px;
+float:left;
+width: 672px;
+}
+
+.button_read {
+padding: 10px 18px;
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+letter-spacing: -0.416667px;
+color: #FFFFFF;
+background: #315AF2;
+border-radius: 6px;
+flex: none;
+order: 0;
+align-self: center;
+}
+
+.button_read:hover, .button:hover {
+background: #6583f5;
+}
+
+#new {
+width: 37px;
+height: 20px;
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+color: #E9399C;
+}
+.article_div {
+   float: left;
+
+}
+.article_image {
+width: 464px;
+height: 422px;
+margin-left: 34px;
+margin-top: 6px;
+}
+
+.other_articles_header {
+margin-left:120px;
+margin-top: 42px;
+}
+
+.post_cell{
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    padding: 10px;
+    float: left;
+    width: 335px;
+    height: 300px;
+    text-decoration: none;
+    margin: 0px 49px 32px 120px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+}
+.post_cell:last-child {
+    margin-right: 0;
+}
+.post_data {
+font-family: Circe Rounded;
+font-size: 12px;
+line-height: 20px;
+/* identical to box height, or 167% */
+
+display: flex;
+align-items: center;
+letter-spacing: -0.416667px;
+
+color: #979797;
+}
+.post_image {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 217px;
+height: 112px;
+}
+.add_post {
+margin-top: 60px;
+margin-left: 120px;
+}
+
+.name_article {
+width: 870px;
+height: 52px;
+
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 52px;
+
+background: #FFFFFF;
+border: 2px solid #CDCDCD;
+border-radius: 3px;
+padding-left: 16px;
+color: #315AF2;
+margin-right: 14px;
+
+}
+
+.name_article::placeholder {
+color: #C4C4C4;
+}
+
+.add_post_title {
+margin-bottom: 44px;
+}
+
+.button_submit {
+width: 159px;
+height: 50px;
+background: #E9399C;
+border-radius: 3px;
+
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+border: 1px solid #ccc;
+}
+
+button {
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.text_article {
+width: 875px;
+height: 420px;
+
+border: 2px solid #CDCDCD;
+
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+
+color: #010101;
+padding-left: 10px;
+}
+
+.button_file {
+width: 155px;
+height: 50px;
+
+margin: 11px 70px;
+
+background: #315AF2;
+border-radius: 3px;
+
+font-family: Museo Cyrl;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+}
+.upload_cell input{
+
+width: 155px;
+height: 50px;
+background: #315AF2;
+}
+.upload_file_h5 {
+margin: 17px 21px;
+}
+
+
+.upload_cell {
+display: block;
+border: 2px solid #CDCDCD;
+}
+
+.upload_file {
+border: 2px solid #CDCDCD;
+box-sizing: border-box;
+border-radius: 3px;
+}
+
+.content_full_post {
+width: 600px;
+margin: auto;
+}
+.post_image_full {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 607px;
+height: 320px;
+}
+.full_post_description {
+font-family: Circe Rounded;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 128%;
+/* or 22px */
+
+
+color: #404040;
+}
+
+#preview {
+width: 260px;
+margin: auto;
+position: relative;
+}
+
+#krestik {
+position:absolute;
+right: 5px;
+top: 5px;
+}
